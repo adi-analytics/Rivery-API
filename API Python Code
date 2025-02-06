@@ -3,12 +3,12 @@
 import pandas as pd   
 import requests
 import json
-
+#url = 'https://augury.sisense.com/api/v2/datamodels/tables=parameters'
 url = 'https://console.rivery.io/api/rivers'
 payload={}
 headers = {
 "Content-Type": "application/json",
-"Authorization": "Bearer token"}
+"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsImV4cCI6MjAzNzcwNTgyMiwiaWF0IjoxNzIyMzQ1ODIyfQ.eyJhY2MiOiI2MGZjNjgzM2Y1NjgyYzMwNWU5ZGU5NTYiLCJzY29wZXMiOnsiNjBmYzY4MzNmNTY4MmMzMDVlOWRlOTU4IjpbIm1lOmxpc3QiLCJkYXRhc291cmNlOmxpc3QiLCJkYXRhZnJhbWU6ZGVsZXRlIiwiZGF0YWZyYW1lOmxpc3QiLCJkYXRhZnJhbWU6d3JpdGUiLCJkYXRhX3F1YWxpdHlfdGVzdDp3cml0ZSIsImRhdGFfcXVhbGl0eV90ZXN0Omxpc3QiLCJsb2dpY29kZTpsaXN0Iiwib3BlcmF0aW9uczpsaXN0IiwiYWN0aXZpdHk6bGlzdCIsImVudmlyb25tZW50Omxpc3QiLCJhY2NvdW50Omxpc3QiLCJhdWRpdDpsaXN0IiwiY29ubmVjdGlvbjpsaXN0IiwiY29ubmVjdGlvbjplZGl0IiwiY29ubmVjdGlvbjpkZWxldGUiLCJyaXZlcjpsaXN0Iiwicml2ZXI6ZWRpdCIsInJpdmVyOmRlbGV0ZSIsImNvbm5lY3Rpb246c2hhcmUiLCJhY3Rpdml0eTpsb2ciLCJmaWxlOmVkaXQiLCJncm91cDpsaXN0Iiwicml2ZXI6d3JpdGUiLCJwbGFuOmxpc3QiLCJ1c2VyOmVkaXQiLCJ1c2VyOmxpc3QiLCJ0ZWFtOmxpc3QiLCJ0ZWFtOndyaXRlIiwidmFyaWFibGVzOmxpc3QiLCJ2YXJpYWJsZXM6ZWRpdCJdfSwidG9rZW5fbmFtZSI6InJpdmVyeV90b2tlbiIsImlzcyI6IjY2NWQ5Y2QwMjc5MTQzNTJlNmIxZGU4NyIsImp0aSI6ImE4ZDczZjU1MDBiYzQxZDY4M2IwOGU1OTJlOTc4Nzg1IiwiZW52IjoiNjBmYzY4MzNmNTY4MmMzMDVlOWRlOTU4Iiwic3ViIjoiUml2ZXJ5IEFQSSJ9.FhB8xevJ_oWdnf085-_p98N2wpkZ4DRXXxEXoDvgpOQ"}
 
 
 response = requests.request("GET", url, headers=headers, data=payload)
@@ -21,5 +21,5 @@ rivery_data = response.json()
 rivery_data
 df1 = pd.json_normalize(rivery_data)
 df1
-#df1.to_csv('Document/data2.csv', index=False)
+df1.to_csv('Documents\rivers_output.csv', index=False)
 
