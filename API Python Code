@@ -3,8 +3,8 @@
 import pandas as pd   
 import requests
 import json
-#url = 'https://augury.sisense.com/api/v2/datamodels/tables=parameters'
-url = 'https://augury.sisense.com/api/v1/datasets/'
+
+url = 'https://console.rivery.io/api/rivers'
 payload={}
 headers = {
 "Content-Type": "application/json",
