@@ -1,0 +1,25 @@
+
+
+import pandas as pd   
+import requests
+import json
+#url = 'https://augury.sisense.com/api/v2/datamodels/tables=parameters'
+url = 'https://augury.sisense.com/api/v1/datasets/'
+payload={}
+headers = {
+"Content-Type": "application/json",
+"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjY1ZDhhMDAxODhmMjkwMDJlZTM3YzU3IiwiYXBpU2VjcmV0IjoiNWVlMzBkNGQtOTIwMi1kYzRmLWVmYzAtZWQzNzUzZDExNWM0IiwiYWxsb3dlZFRlbmFudHMiOlsiNjA3NzI1ZjdkODlhMzgwMDFhNWY5NmU1Il0sInRlbmFudElkIjoiNjA3NzI1ZjdkODlhMzgwMDFhNWY5NmU1In0.-kDrSfHZ8QFGOpvfsogZuNtV-jwzSpxEAsb24ojrgOc"}
+
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+rivery_data = response.json()
+
+#b=str(rivery_data)
+#a_json = json.loads(b)
+#print(a_json)
+rivery_data
+df1 = pd.json_normalize(rivery_data)
+df1
+#df1.to_csv('Document/data2.csv', index=False)
+
