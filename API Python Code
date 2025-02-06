@@ -8,7 +8,7 @@ url = 'https://augury.sisense.com/api/v1/datasets/'
 payload={}
 headers = {
 "Content-Type": "application/json",
-"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjY1ZDhhMDAxODhmMjkwMDJlZTM3YzU3IiwiYXBpU2VjcmV0IjoiNWVlMzBkNGQtOTIwMi1kYzRmLWVmYzAtZWQzNzUzZDExNWM0IiwiYWxsb3dlZFRlbmFudHMiOlsiNjA3NzI1ZjdkODlhMzgwMDFhNWY5NmU1Il0sInRlbmFudElkIjoiNjA3NzI1ZjdkODlhMzgwMDFhNWY5NmU1In0.-kDrSfHZ8QFGOpvfsogZuNtV-jwzSpxEAsb24ojrgOc"}
+"Authorization": "Bearer token"}
 
 
 response = requests.request("GET", url, headers=headers, data=payload)
